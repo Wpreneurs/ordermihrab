@@ -1,0 +1,22 @@
+{
+  "name": "Penerbit Mihrab",
+  "short_name": "Penerbit Mihrab",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#06084a",
+  "description": "Toko online Simpeltoko Discount - Belanja mudah, cepat, dan hemat di Blogger!",
+  "icons": [
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMChwGGRaNsX3CyHOfIxgEv4yDLf44uaXB7Tu5gKTncpIywH4j0mZjimh1FAToZ4O75g4AjBd9Y13EW05ua2vcZZJd-gTlaBU6B0yLU6-wAdwvI3Mw9NCQocQ5BcJWS0jTfdvvRzWUHRQbRJjH8MGxzN_1G9JoEIhqUwNifc8SwIcNET37IlYTiz4rNGg8/s16000/Logo%20Utama%20192x192.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBl6ooZ8d_V5esPOMdlfj-K1zfN3vIOrZSFLE_ArR45bzBIzlh5-ctXrLv-X1BHbAfumHDa-6u2MGIxdnujQM1xmfhqD85yUukbPoqxw9yqJtne0sL7wuezIsx6H1F1WBs8i5FTOIyfSrl2vfzlyGYzgYwIFNqi3clq5hZp1Ma53G1M4Jcxxz6XxRuOG9x/s16000/Logo%20Utama%20512x512.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
