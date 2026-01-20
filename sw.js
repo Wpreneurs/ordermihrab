@@ -1,21 +1,37 @@
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open("simpeltoko-v1").then(cache => {
-      return cache.addAll([
-        "/",
-        "/?m=1",  // versi mobile
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
-        "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
-        "https://blogger.googleusercontent.com/img/.../LOGO-SIMPELTOKO-Square-300x300.jpg"
-      ]);
+const CACHE_NAME = 'mihrab-pwa-v1';
+const urlsToCache = [
+  '/',
+  '/manifest.json'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
     })
   );
+  self.skipWaiting();
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(response => {
-      return response || fetch(e.request);
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
     })
   );
 });
